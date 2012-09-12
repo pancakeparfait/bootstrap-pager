@@ -1,13 +1,13 @@
 ﻿$(function () {
-    $('ul.searchNav li.prev').click(function (e) {
+    $('.pagination ul li.prev').click(function (e) {
         pager.showPrev($(this));
     });
 
-    $('ul.searchNav li.next').click(function (e) {
+    $('.pagination ul li.next').click(function (e) {
         pager.showNext($(this));
     });
 
-    $('a[data-toggle="tab"]').on('shown', function (e) {
+    $('.pagination a[data-toggle="tab"]').on('shown', function (e) {
         pager.handleBounds($(e.target).parent('li.active'));
     });
 
@@ -57,7 +57,7 @@
 
             // Show and hide appropriate sections
             var $toShow = $tabs.slice(leftIndex, rightIndex + 1).show();
-            var $toHide = $tabs.not($toShow).hide();
+            $tabs.not($toShow).hide();
         },
         togglePrevNextPerActive: function ($target) {
             var $prevLink = $target.siblings('li.prev');
@@ -74,7 +74,7 @@
                 $nextTarget.length === 0);
         },
         init: function () {
-            $('li.tab.active').each(function () {
+            $('.pagination li.tab.active').each(function () {
                 pager.handleBounds($(this));
             });
         }
