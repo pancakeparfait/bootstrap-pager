@@ -1,9 +1,9 @@
 ﻿$(function () {
-    $('.pagination ul li.prev').click(function (e) {
+    $('.pagination ul li.prev').click(function () {
         pager.showPrev($(this));
     });
 
-    $('.pagination ul li.next').click(function (e) {
+    $('.pagination ul li.next').click(function () {
         pager.showNext($(this));
     });
 
